@@ -374,23 +374,21 @@ select {
   color: rgba(255, 255, 255, 0.7); /* Полупрозрачный текст */
 }
 
-
 .services-list {
   display: flex;
   flex-direction: column;
   gap: 20px; /* Расстояние между элементами */
 }
 
-/* Контейнер карточки */
 .services-item {
   position: relative;
-  display: flex; /* Используем flex для горизонтального размещения элементов */
-  align-items: center; /* Центрируем элементы по вертикали */
+  display: flex;
+  align-items: center;
   padding: 35px;
-  background: transparent; /* Прозрачный фон */
+  background: transparent; /* Полностью прозрачный фон */
   border: 1px solid #3A3742; /* Базовый цвет обводки */
   border-radius: 20px; /* Радиус углов */
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  transition: border-color 0.3s ease, transform 0.3s ease; /* Плавный переход обводки */
 }
 
 .services-item:hover {
@@ -434,16 +432,16 @@ select {
 
 .services-icon {
   font-size: 37px;
-  margin-right: 20px; /* Отступ от текста */
-  background: linear-gradient(90deg, #6819E8, #DC3545); /* Градиент */
+  background: linear-gradient(90deg, #6819E8, #DC3545); /* Задаем градиент */
   -webkit-background-clip: text; /* Применяем градиент только к тексту */
   -webkit-text-fill-color: transparent; /* Делаем фон текста прозрачным */
+  margin-right: 20px;
 }
 
 .services-content {
-  flex: 1; /* Заполняет всё доступное пространство */
-  display: flex;
-  flex-direction: column; /* Размещаем заголовок и описание вертикально */
+  display: flex; /* Создаем две колонки */
+  justify-content: space-between; /* Распределяем элементы */
+  align-items: center; /* Вертикальное выравнивание */
 }
 
 .services-left {
@@ -458,12 +456,12 @@ select {
 .services-item-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 24px;
-  font-weight: 300; /* Тонкий кегль */
   margin: 0;
   color: #fff;
-  white-space: nowrap; /* Запрещаем перенос строки */
-  overflow: hidden; /* Обрезаем текст, если он не помещается */
-  text-overflow: ellipsis; /* Добавляем многоточие, если текст обрезается */
+  padding-right: 0px;
+  white-space: nowrap; /* Запрещаем перенос текста */
+  overflow: hidden; /* Скрываем текст, выходящий за границы */
+  font-weight: 300; /* Толщина шрифта Light */
 }
 
 /* Контейнер для описания */
@@ -477,16 +475,10 @@ select {
 .services-item-desc {
   font-family: 'Open Sans', sans-serif; /* Шрифт описания */
   font-size: 14px; /* Размер текста */
-  font-weight: 300; /* Тонкий кегль */
-  color: #7F7D85; /* Цвет текста */
+  color: rgba(255, 255, 255, 0.7); /* Цвет текста */
   margin: 0; /* Убираем внешние отступы */
-  position: absolute; /* Абсолютное позиционирование */
-  left: 675px; /* Фиксированное расстояние от левой границы карточки */
-  top: 50%; /* Центрируем текст по высоте */
-  transform: translateY(-50%); /* Для точного выравнивания по центру */
+  padding-left: 550px; /* Сдвиг текста вправо */
   line-height: 1.6; /* Высота строки */
-  max-width: 450px; /* Ограничиваем максимальную ширину строки */
-  word-wrap: break-word; /* Переносим текст, если он слишком длинный */
 }
 
 .services-arrow {
