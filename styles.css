@@ -476,7 +476,7 @@ select {
 
 .services-item-desc {
   font-family: 'Open Sans', sans-serif; /* Шрифт описания */
-  font-size: 14px; /* Размер текста */
+  font-size: 15px; /* Размер текста */
   font-weight: 300; /* Тонкий кегль */
   color: #7F7D85; /* Цвет текста */
   margin: 0; /* Убираем внешние отступы */
