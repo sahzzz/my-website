@@ -2,5 +2,5 @@
 
 git status 
 git add .
-git commit -m "init"
+git commit -m "second-block"
 git push
