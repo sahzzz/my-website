@@ -430,7 +430,7 @@ select {
 .services-icon {
   font-size: 37px;
   margin-right: 20px; /* Отступ от текста */
-  background: #D79760; /* Градиент */
+  background: #DC3545; /* Градиент */
   -webkit-background-clip: text; /* Применяем градиент только к тексту */
   -webkit-text-fill-color: transparent; /* Делаем фон текста прозрачным */
 }
@@ -608,7 +608,7 @@ select {
 .benefits-card h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 300;
   margin: 30 0 18px;
   color: #fff; /* Цвет заголовка */
   position: relative; /* Для корректного отображения поверх градиента */
