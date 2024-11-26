@@ -4,6 +4,7 @@ body {
   font-family: 'Montserrat', sans-serif; /* Основной шрифт */
   background-color: #18161F; /* Тёмный фон */
   color: #fff; /* Белый цвет текста */
+  overflow: visible;
 }
 
 /* Используем Open Sans для подзаголовков */
@@ -341,12 +342,13 @@ select {
   height: 100%;
 }
 
+
 /* НАЧАЛО ВТОРОГО БЛОКА */
 
 /* Второй блок: Услуги */
 .services {
   background-color: #18161F; /* Тёмный фон */
-  padding: 260px 0; /* Внешние отступы */
+  padding: 80px 0; /* Внешние отступы */
   color: #fff;
 }
 
@@ -363,6 +365,12 @@ select {
   margin: 0 0 20px; /* Отступ снизу */
   color: #fff; /* Белый текст */
   text-align: center; /* Выравнивание текста по центру */
+}
+
+.services-title span {
+  background: linear-gradient(90deg, #6819E8 0%, #DC3545 100%);
+  -webkit-background-clip: text; /* Применяем градиент к тексту */
+  -webkit-text-fill-color: transparent; /* Делаем текст прозрачным */
 }
 
 .services-subtitle {
@@ -646,6 +654,7 @@ select {
 
 .promo-block {
   display: flex;
+  position: relative; /* Обязательно, чтобы absolute работал корректно */
   justify-content: space-between;
   align-items: center;
   background: url('img/bck-promo.svg') center/cover no-repeat; /* Используем ваше изображение */
@@ -653,18 +662,21 @@ select {
   border-radius: 20px;
   margin: 40px 0;
   overflow: hidden;
-  min-height: 365px; /* Задаем минимальную высоту блока */
+  height: auto;
+  min-height: 300px; /* Задаем минимальную высоту блока */
 }
 
 .promo-content {
   flex: 1;
   padding-right: 20px;
+  padding-left: 30px;
 }
 
 .promo-content h2 {
   font-size: 42px;
   font-weight: 500;
   margin-bottom: 15px;
+  margin: auto;
 }
 
 .promo-content h2 span {
@@ -672,8 +684,12 @@ select {
 }
 
 .promo-content p {
+  font-family: 'Open Sans', sans-serif; /* Шрифт для подзаголовка */
   font-size: 16px;
-  margin-bottom: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #fff; /* Полупрозрачный текст */
 }
 
 .promo-actions {
@@ -683,12 +699,26 @@ select {
 }
 
 .promo-button {
-  background-color: #ff4d4d;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
+  display: inline-block;
+  width: 198px; /* Ширина кнопки */
+  height: 54px; /* Высота кнопки */
+  line-height: 54px; /* Вертикальное выравнивание текста */
+  text-align: center; /* Центрирование текста */
+  letter-spacing: 0.04em; /* Расстояние между буквами - 5% */
+  font-size: 16px; /* Размер текста */
+  font-weight: 400; /* Толщина текста */
+  color: #18161F; /* Цвет текста (тёмный) */
+  background-color: #fff; /* Белый фон */
+  border: none; /* Без обводки */
+  border-radius: 20px; /* Закругленные края, половина высоты кнопки */
+  cursor: pointer; /* Указатель при наведении */
+  transition: all 0.3s ease; /* Плавный переход для наведения */
+  margin: 0; /* Убираем margin-right */
+}
+
+.promo-button:hover {
+  background: linear-gradient(90deg, #6819E8 0%, #6F42C1 37%, #D63384 71%, #DC3545 100%);
+  color: #fff; /* Белый текст на градиенте */
 }
 
 .promo-button:hover {
@@ -697,15 +727,47 @@ select {
 
 .promo-offer {
   font-size: 14px;
-  color: #fff;
+  font-weight: 300;
+  color: #A5A5A5;
+  display: flex; /* Flex для выравнивания текста и иконки */
+  align-items: center; /* Вертикальное выравнивание */
+  margin-left: 10px;
+}
+
+.promo-offer::before {
+  content: ''; /* Обязательно для отображения псевдоэлемента */
+  display: inline-block; /* Чтобы иконка отображалась */
+  width: 20px; /* Ширина иконки */
+  height: 20px; /* Высота иконки */
+  background: url('img/discount.svg') no-repeat center; /* Укажите путь к SVG */
+  background-size: contain; /* Иконка адаптируется под размеры */
+  margin-right: 8px; /* Отступ между иконкой и текстом */
 }
 
 .promo-image {
+  position: absolute;
+  bottom: 0; /* Привязка к нижней границе */
+  right: 0; /* Привязка к правой границе */
+  width: auto;
+  height: auto;
+  margin: 0; /* Убираем отступы */
+  padding: 0; /* Убираем внутренние отступы */
+  box-sizing: border-box; /* Убедитесь, что padding не влияет на размеры */
+}
+
+.promo-content {
   flex: 1;
-  text-align: right;
+  padding-right: 20px;
+  max-width: 50%; /* Убедитесь, что текстовая часть не занимает слишком много места */
 }
 
 .promo-image img {
+  display: block; /* Убирает возможные пробелы между inline элементами */
   max-width: 100%;
-  border-radius: 10px;
+  height: auto;
+  margin: 0; /* Убираем внешние отступы */
+  padding: 0; /* Убираем внутренние отступы */
+  border: none; /* Убедитесь, что нет рамки */
+  vertical-align: bottom; /* Убираем пробелы внизу */
+  margin-right: 80px;
 }
